@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    ".gitignore": true,
+    ".vscode": true,
+    "public": true,
+    "tsconfig.node.json": true,
+    // "vite.config.ts": true,
+    // "package.json": true,
+    "index.html": true,
+    "README.md": true,
+    "next-env.d.ts": true,
+    ".gitattributes": true,
+    // "src/pages/_document.tsx": true,
+    "src/TestesNaApi": true,
+    "yarn.lock": true,
+    "tsconfig.json": true
+  }
+}
