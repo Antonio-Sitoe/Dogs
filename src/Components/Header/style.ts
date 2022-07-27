@@ -18,7 +18,6 @@ export const HeaderCss = styled.header`
     justify-content: space-between;
   }
 `;
-
 export const Logo = styled(Link)`
   padding: 0.5rem 0;
 `;

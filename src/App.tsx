@@ -1,4 +1,3 @@
-export const url = "https://dogsapi.origamid.dev/json";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserStorage } from "./Contexts/UserContext";
 import { GlobalStyle } from "./styles/GlobalStyle";
