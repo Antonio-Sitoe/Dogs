@@ -4,7 +4,7 @@ import { HeaderCss, LoginLink, Logo } from "./style";
 import { UserContext } from "../../Contexts/UserContext";
 
 function Header() {
-  const { data } = React.useContext(UserContext);
+  const { data, userLogout } = React.useContext(UserContext);
   return (
     <HeaderCss>
       <nav className="container">
@@ -12,7 +12,10 @@ function Header() {
           <Dogs />
         </Logo>
         {data ? (
-          <LoginLink to="/conta">{data?.nome}</LoginLink>
+          <>
+            <LoginLink to="/conta">{data?.nome}</LoginLink>
+            <button onClick={() => userLogout()}>Sair</button>
+          </>
         ) : (
           <LoginLink to="/login"> Login | Criar</LoginLink>
         )}

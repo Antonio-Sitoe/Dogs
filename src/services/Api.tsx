@@ -17,6 +17,17 @@ export function TOKEN_POST({ username, password }: ITOKEN_POST) {
     },
   };
 }
+export function TOKEN_VALIDATE_POST(token: string) {
+  return {
+    url: `${API_URL}/jwt-auth/v1/token/validate`,
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+}
 
 export function USER_GET(token: string) {
   return {
