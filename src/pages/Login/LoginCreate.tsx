@@ -1,8 +1,55 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
+import Button from '../../Components/Form/Button/Button';
+import Input from '../../Components/Form/Input/Input';
+import UserContext from '../../Contexts/UserContext';
+import Error from '../../Helpers/Error/Error';
+import useForm from '../../Hooks/useForm';
+import { AnimeLeft, Title } from '../../styles/GlobalStyle'
+import { LoginForms } from './style'
+
+import { USER_POST } from '../../services/Api';
+
 
 function LoginCreate() {
+  const { userLogin, error, loading } = React.useContext(UserContext);
+  const username = useForm();
+  const email = useForm('email');
+  const password = useForm();
+
+
+  async function CreateUser(e: FormEvent) {
+    e.preventDefault()
+
+    if (username.validate() && email.validate() && password.validate()) {
+      const { options, url } = USER_POST({
+        username: username.value,
+        email: email.value,
+        password: password.value
+      })
+      try {
+        const response = await fetch(url, options);
+        if (response.ok) userLogin(username.value, password.value)
+      } catch (er) {
+        console.log(er)
+      }
+    }
+  }
   return (
-    <div>LoginCreate</div>
+    <AnimeLeft>
+      <Title>Cadastre-se</Title>
+      <LoginForms onSubmit={CreateUser}>
+        <Input {...username} label="Usuario" type="text" name={"username"} />
+        <Input {...email} label="Email" type="email" name={"email"} />
+        <Input {...password} label="Senha" type="password" name="password" />
+        {!loading ? (
+          <Button text="Cadastrar" />
+        ) : (
+          <Button text="Carregando..." disabled={true} />
+        )}
+        {error && <Error error={error} />}
+
+      </LoginForms>
+    </AnimeLeft>
   )
 }
 
