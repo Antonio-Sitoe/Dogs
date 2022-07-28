@@ -74,6 +74,7 @@ export const Title = styled.h1`
   margin: 1rem 0;
   position: relative;
   font-size: 3rem;
+  text-transform: capitalize;
 
   &::after {
     content: "";

@@ -6,7 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import User from './pages/User/User';
+import ProtectedRoute from "./Helpers/ProtectedRoute";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
-            <Route path="/conta/*" element={<User />} />
+            <Route path="/conta/*" element={<ProtectedRoute />} />
           </Routes>
           <Footer />
           <GlobalStyle />
