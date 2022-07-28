@@ -2,7 +2,7 @@
 <img src='./logo_readme.png'>
 
 <div>
- <img src="https://user-images.githubusercontent.com/72309855/181462833-809ffc84-07e3-4027-b750-bba61982e4f1.png" />
+ <img alt"sdd" src="https://user-images.githubusercontent.com/72309855/181462833-809ffc84-07e3-4027-b750-bba61982e4f1.png" />
 </div>
 
 </div>
