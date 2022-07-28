@@ -1,5 +1,4 @@
 <div align='center'>
-<img src='./logo_readme.png'>
 
 <div>
  <img alt"sdd" src="https://user-images.githubusercontent.com/72309855/181462833-809ffc84-07e3-4027-b750-bba61982e4f1.png" />
@@ -27,7 +26,7 @@
 <h2>ℹ️ Como utilizar</h2>
 
     Clone esse repositório
-    $ git clone https://github.com/antonio-sitoe/Dogs.git
+    $ git clone https://github.com/Antonio-Sitoe/Dogs.git
 
     Instalar dependências
     $ npm install
