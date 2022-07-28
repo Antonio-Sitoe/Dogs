@@ -2,10 +2,7 @@
 <img src='./logo_readme.png'>
 
 <div>
-    <img src="https://img.shields.io/github/repo-size/rafaasimi/Dogs-Origamid">
-    <img src="https://img.shields.io/github/last-commit/rafaasimi/Dogs-Origamid">
-    <img src="https://img.shields.io/github/languages/count/rafaasimi/Dogs-Origamid">
-    <img src="https://img.shields.io/github/languages/top/rafaasimi/Dogs-Origamid">
+   ![image](https://user-images.githubusercontent.com/72309855/181462833-809ffc84-07e3-4027-b750-bba61982e4f1.png)
 </div>
 
 </div>
