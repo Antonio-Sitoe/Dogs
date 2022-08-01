@@ -12,6 +12,10 @@ const types = {
     message:
       "A senha tem que ter no minimo 9 caracteres e 1 caractere especial",
   },
+  number: {
+    regex: /^\d+$/,
+    message: "Tem de ser um numbero",
+  },
 };
 
 function useForm(type) {

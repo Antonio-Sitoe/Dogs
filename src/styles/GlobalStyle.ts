@@ -60,6 +60,10 @@ a {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 `;
 
 export const AnimeLeft = styled.section`

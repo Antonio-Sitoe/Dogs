@@ -8,10 +8,9 @@ function UserHeader() {
   const [title, setTitle] = React.useState("");
   const { pathname } = useLocation();
 
-
   React.useEffect(() => {
     switch (pathname) {
-      case "/conta/postar":
+      case "/conta/posta":
         setTitle("Poste tua foto");
         break;
       case "/conta/estatisticas":
@@ -23,7 +22,6 @@ function UserHeader() {
     }
   }, [pathname]);
 
-  
   return (
     <UserHeaderCss>
       <Title className="animeleft">{title}</Title>

@@ -3,7 +3,7 @@ import React from "react";
 interface IOptions {}
 
 function useFetch() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState<null | []>(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
