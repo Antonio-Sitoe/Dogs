@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { IPhotoGet } from "../../Types/interfaces";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 
-export const FeedContainer = styled.section``;
+export const FeedContainer = styled.section`
+  
+`;
 
 function Feed() {
+  const [modalPhoto, setModalPhoto] = React.useState<null | IPhotoGet>(null);
   return (
     <FeedContainer>
-      <FeedModal />
-      <FeedPhotos />
+      {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
+      <FeedPhotos setModalPhoto={setModalPhoto} />
     </FeedContainer>
   );
 }

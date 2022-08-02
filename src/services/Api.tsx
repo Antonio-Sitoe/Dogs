@@ -81,3 +81,12 @@ export function PHOTOS_GET({ page, total, user }: IPHOTOS_GET) {
     },
   };
 }
+export function PHOTO_GET_ID(id: number) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: "GET",
+      cache: "no-store",
+    },
+  };
+}

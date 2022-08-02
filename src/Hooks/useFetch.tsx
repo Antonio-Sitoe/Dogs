@@ -1,13 +1,11 @@
 import React from "react";
 
-interface IOptions {}
-
-function useFetch() {
-  const [data, setData] = React.useState<null | []>(null);
+function useFetch<T>() {
+  const [data, setData] = React.useState<null | T>(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  const request = React.useCallback(async (url: string, options: IOptions) => {
+  const request = React.useCallback(async (url: string, options: {}) => {
     let response;
     let json;
     try {
