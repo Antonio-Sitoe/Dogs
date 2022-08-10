@@ -7,7 +7,7 @@ to {
 }
 `;
 export const PhotoContentCss = styled.div`
-  margin: auto 1rem;
+  margin: auto;
   height: 36rem;
   background: white;
   display: grid;

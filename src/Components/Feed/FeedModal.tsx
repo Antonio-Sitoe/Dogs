@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import Error from "../../Helpers/Error/Error";
 import Loading from "../../Helpers/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
