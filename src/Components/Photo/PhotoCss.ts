@@ -86,7 +86,6 @@ export const PhotoCommentsCss = styled.ul`
   word-break: break-word;
   padding: 0 2rem;
   max-width: 300px;
-  border: 1px solid red;
 
   li {
     margin-bottom: 0.5rem;
@@ -156,5 +155,25 @@ export const Textearea = styled.textarea`
     border-color: #fb1;
     background: white;
     box-shadow: 0 0 0 3px #fea;
+  }
+`;
+
+
+export const ButtonDelete = styled.button`
+  background: #ddd;
+  line-height: 1;
+  font-family: var(--type-first);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.1s;
+  &:hover,
+  &:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px #eee;
+    border-color: #333;
   }
 `;

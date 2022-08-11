@@ -35,7 +35,7 @@ export const FeedPhotoItemCss = styled.li`
   cursor: pointer;
   border-radius: 0.2rem;
 
-  img {
+  div {
     grid-area: 1/1;
   }
   span {
