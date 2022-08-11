@@ -12,7 +12,6 @@ interface IPhotoComments {
 }
 
 function PhotoCommentsForm({ id, setcommentContent }: IPhotoComments) {
-  
   const { request, error } = useFetch();
   const [comment, setComment] = React.useState("");
 

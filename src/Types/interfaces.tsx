@@ -6,7 +6,6 @@ export interface IData {
 }
 
 
-
 export interface IPhotoGet {
   id: number;
   acessos: string;
@@ -18,7 +17,7 @@ export interface IPhotoGet {
   title: string;
   total_comments: string;
 }
-export type IFeedPhotosGetList = Array<IPhotoGet>;
+
 
 export interface Comments {
   comment_ID: string;

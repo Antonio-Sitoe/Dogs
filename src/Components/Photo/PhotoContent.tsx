@@ -20,8 +20,8 @@ function PhotoContent({ photoData }: IPhotoContentProps) {
       </PhotoContentPhotoCss>
       <PhotoContentDetailsCss>
         <div>
-          <p className='autor'>
-            <Link to={`/perfil/${photo.author}`}>@${photo.author}</Link>
+          <p className="autor">
+            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             <span className="visualizacao">{photo.acessos}</span>
           </p>
 
@@ -34,8 +34,8 @@ function PhotoContent({ photoData }: IPhotoContentProps) {
             <li>{photo.idade} anos</li>
           </ul>
         </div>
-        <PhotoComments id={photo.id} comments={comments} />
       </PhotoContentDetailsCss>
+      <PhotoComments id={photo.id} comments={comments} />
     </PhotoContentCss>
   );
 }
