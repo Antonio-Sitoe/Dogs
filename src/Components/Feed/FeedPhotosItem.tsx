@@ -1,5 +1,6 @@
 import { IPhotoGet } from "../../Types/interfaces";
 import { SetModalPhoto } from "../../Types/Type";
+import Image from "../Image/Image";
 import { FeedPhotoItemCss } from "./FeedStyle";
 
 interface IFeedPhotosItemProps {
@@ -13,7 +14,7 @@ function FeedPhotosItem({ setModalPhoto, photo }: IFeedPhotosItemProps) {
   }
   return (
     <FeedPhotoItemCss onClick={handleClick}>
-      <img src={photo.src} alt={photo.title} />
+      <Image src={photo.src} alt={photo.title} />
       <span>{photo.acessos}</span>
     </FeedPhotoItemCss>
   );

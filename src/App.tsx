@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserStorage } from "./Contexts/UserContext";
 import { GlobalStyle } from "./styles/GlobalStyle";
-
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./pages/Home/Home";

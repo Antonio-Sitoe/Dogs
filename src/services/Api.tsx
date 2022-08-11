@@ -66,6 +66,30 @@ export function PHOTO_POST(formData: FormData, token: string | null) {
     },
   };
 }
+export function COMMENT_POST(id: number, { comment }: { comment: string }) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ comment }),
+    },
+  };
+}
+export function PHOTO_DELETE(id: number) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    },
+  };
+}
 
 interface IPHOTOS_GET {
   page: number;

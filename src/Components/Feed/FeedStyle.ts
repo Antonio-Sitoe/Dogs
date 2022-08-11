@@ -13,7 +13,7 @@ export const FeedModalCss = styled.section`
   padding: 2rem calc(4rem + 15px) 2rem 4rem;
 
   @media (max-width: 40rem) {
-    padding: 2rem calc(2rem+15px) 2rem 2rem;
+    padding: 2rem calc(2rem + 15px) 2rem 2rem;
   }
 `;
 
@@ -35,13 +35,14 @@ export const FeedPhotoItemCss = styled.li`
   cursor: pointer;
   border-radius: 0.2rem;
 
-  img {
+  div {
     grid-area: 1/1;
   }
   span {
     background: rgba(0, 0, 0, 0.3);
     color: white;
     font-size: 1rem;
+    text-align: center;
     align-items: center;
     justify-content: center;
     display: none;
@@ -62,7 +63,7 @@ export const FeedPhotoItemCss = styled.li`
   }
 
   &:nth-child(2) {
-    grid-column: 2/4;
+    grid-column: 2 / 4;
     grid-row: span 2;
     @media (max-width: 40rem) {
       grid-column: initial;

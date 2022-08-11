@@ -9,11 +9,11 @@ to {
 export const PhotoContentCss = styled.div`
   margin: auto;
   height: 36rem;
+  border-radius: 0.2rem;
   background: white;
   display: grid;
   grid-template-columns: 36rem 20rem;
   grid-template-rows: auto 1fr auto;
-  border-radius: 0.2rem;
   overflow: hidden;
   opacity: 0;
   animation: ${ScaleUp} 0.3s forwards;
@@ -34,50 +34,146 @@ export const PhotoContentPhotoCss = styled.div`
 `;
 export const PhotoContentDetailsCss = styled.div`
   padding: 2rem 2rem 0 2rem;
+  div {
+    .autor {
+      opacity: 0.5;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-  .autor {
-    opacity: 0.5;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      a:hover {
+        text-decoration: underline;
+      }
 
-    a {
-      text-decoration: underline;
-    }
-
-    .visualizacao::before {
-      content: "";
-      display: inline-block;
-      height: 10px;
-      width: 16px;
-      margin-right: 0.5rem;
-      background: url(${IceSvg}) no-repeat;
-    }
-  }
-
-  ul.attributes {
-    display: flex;
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-
-    li {
-      margin-right: 2rem;
-      &::before {
+      .visualizacao::before {
         content: "";
         display: inline-block;
-        height: 20px;
+        height: 10px;
+        width: 16px;
         margin-right: 0.5rem;
-        position: relative;
-        top: 3px;
-        width: 2px;
-        background: #333;
-        margin-top: 5px;
+        background: url(${IceSvg}) no-repeat;
+      }
+    }
+
+    ul.attributes {
+      display: flex;
+      font-size: 1.125rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      li {
+        margin-right: 2rem;
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 20px;
+          margin-right: 0.5rem;
+          position: relative;
+          top: 3px;
+          width: 2px;
+          background: #333;
+          margin-top: 5px;
+        }
       }
     }
   }
 `;
-export const PhotoCommentsCss = styled.div`
+
+export const PhotoCommentsCss = styled.ul`
+  overflow-y: auto;
+  word-break: break-word;
   padding: 0 2rem;
+  max-width: 300px;
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+`;
+
+const latir = keyframes`
+from {
+  opacity: 0;
+}
+
+to {
+  opacity: 1;
+}
+
+`;
+
+export const FormPhoto = styled.form`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem ;
+  gap: 1rem;
+
+  button {
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    background: transparent;
+
+    &:hover,
+    &:hover {
+      outline: none;
+      svg path {
+        fill: #fea;
+        stroke: #fb1;
+      }
+
+      svg g {
+        animation: ${latir} 0.6s infinite;
+      }
+    }
+  }
+`;
+
+export const Textearea = styled.textarea`
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--type-first);
+
+  resize: none;
+  border-radius: 0.2rem;
+  transition: 0.2s;
+  padding: 0.5rem;
+
+  background: whitesmoke;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border-color: #fb1;
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+  }
+`;
+
+
+export const ButtonDelete = styled.button`
+  background: #ddd;
+  line-height: 1;
+  font-family: var(--type-first);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.1s;
+  &:hover,
+  &:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px #eee;
+    border-color: #333;
+  }
 `;
