@@ -78,6 +78,84 @@ export const PhotoContentDetailsCss = styled.div`
     }
   }
 `;
+
 export const PhotoCommentsCss = styled.div`
-  padding: 0 2rem;
+  ul {
+    overflow-y: auto;
+    word-break: break-all;
+    padding: 0.2rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+  }
+`;
+
+const latir = keyframes`
+from {
+  opacity: 0;
+}
+
+to {
+  opacity: 1;
+}
+
+`;
+
+export const FormPhoto = styled.form`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem 0;
+  gap: 1rem;
+
+  button {
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    background: transparent;
+
+  
+
+    &:hover,
+    &:hover {
+
+      outline: none;
+      svg path {
+        fill: #fea;
+        stroke: #fb1;
+      }
+
+      svg g {
+        animation: ${latir} 0.6s infinite;
+      }
+    }
+  }
+`;
+
+export const Textearea = styled.textarea`
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--type-first);
+
+  resize: none;
+  border-radius: 0.2rem;
+  transition: 0.2s;
+  padding: 0.5rem;
+
+  background: whitesmoke;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border-color: #fb1;
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+  }
 `;
