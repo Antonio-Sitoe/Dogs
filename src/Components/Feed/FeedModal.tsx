@@ -5,7 +5,7 @@ import useFetch from "../../Hooks/useFetch";
 import { PHOTO_GET_ID } from "../../services/Api";
 import { IPhotoGet, IPhotoGetId } from "../../Types/interfaces";
 import { SetModalPhoto } from "../../Types/Type";
-import PhotoContent from "../Photo/PhotoContent";
+import PhotoContent from "../PhotoContent/PhotoContent";
 import { FeedModalCss } from "./FeedStyle";
 
 interface FeedModalProps {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Error from "../../Helpers/Error/Error";
 import Loading from "../../Helpers/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
@@ -11,17 +11,23 @@ import { FeedPhotoCss } from "./FeedStyle";
 
 interface IFeedPhotos {
   setModalPhoto: SetModalPhoto;
+  setInFinite: Dispatch<SetStateAction<boolean>>;
+  user: number | string;
+  page: number;
 }
-function FeedPhotos({ setModalPhoto }: IFeedPhotos) {
+function FeedPhotos({ setModalPhoto, setInFinite, user, page }: IFeedPhotos) {
   const { data, loading, error, request } = useFetch<[]>();
-
   React.useEffect(() => {
     const getAllPhotos = async () => {
-      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
-      await request(url, options);
+      const total = 6;
+      const { url, options } = PHOTOS_GET({ page: page, total, user });
+      const { response, json } = await request(url, options);
+      if (response && response.ok && json.length < total) {
+        setInFinite(false);
+      }
     };
     getAllPhotos();
-  }, [request]);
+  }, [request, user, page, setInFinite]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;

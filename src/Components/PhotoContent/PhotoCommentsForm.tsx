@@ -3,7 +3,7 @@ import { Comments } from "../../Types/interfaces";
 import useFetch from "../../Hooks/useFetch";
 import { COMMENT_POST } from "../../services/Api";
 import Error from "../../Helpers/Error/Error";
-import { FormPhoto, Textearea } from "./PhotoCss";
+import { FormPhoto, Textearea } from "./style";
 import SendSvg from "../../assets/SendSvg";
 
 interface IPhotoComments {

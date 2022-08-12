@@ -1,9 +1,8 @@
 import React from "react";
 import { Comments } from "../../Types/interfaces";
-import { PhotoCommentsCss } from "./PhotoCss";
+import { PhotoCommentsCss } from "./style";
 import UserContext from "../../Contexts/UserContext";
 import PhotoCommentsForm from "./PhotoCommentsForm";
-import useMedia from "../../Hooks/useMedia";
 
 interface IPhotoComments {
   id: number;

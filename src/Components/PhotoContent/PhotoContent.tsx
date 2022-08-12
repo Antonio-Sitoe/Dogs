@@ -9,21 +9,22 @@ import {
   PhotoContentCss,
   PhotoContentDetailsCss,
   PhotoContentPhotoCss,
-} from "./PhotoCss";
+} from "./style";
 import PhotoDelete from "./PhotoDelete";
 
 interface IPhotoContentProps {
   photoData: IPhotoGetId;
+  single?: boolean;
 }
-function PhotoContent({ photoData }: IPhotoContentProps) {
+function PhotoContent({ photoData, single }: IPhotoContentProps) {
   const { comments, photo } = photoData;
   const user = React.useContext(UserContext);
   return (
-    <PhotoContentCss>
-      <PhotoContentPhotoCss>
+    <PhotoContentCss className={single === true ? "PhotoContentSingle" : ""}>
+      <PhotoContentPhotoCss className={single === true ? "PhotoContentSingle" : ""}>
         <Image src={photo.src} alt={photo.title} />
       </PhotoContentPhotoCss>
-      <PhotoContentDetailsCss>
+      <PhotoContentDetailsCss className={single === true ? "PhotoContentSingle" : ""}>
         <div>
           <p className="autor">
             {user.data && user.data.username === photo.author ? (

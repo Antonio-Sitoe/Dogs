@@ -1,20 +1,23 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Feed from "../../Components/Feed/Feed";
-import { AnimeLeft } from "../../styles/GlobalStyle";
+import UserContext from "../../Contexts/UserContext";
 import UserHeader from "./UserHeader";
 import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 
 function User() {
+  const { data } = React.useContext(UserContext);
+
   return (
-    <AnimeLeft className="container">
+    <section className="container">
       <UserHeader />
       <Routes>
-        <Route element={<Feed />} path="/" />
+        <Route element={<Feed user={data?.id || 2} />} path="/" />
         <Route element={<UserPhotoPost />} path="posta" />
         <Route element={<UserStats />} path="estatisticas" />
       </Routes>
-    </AnimeLeft>
+    </section>
   );
 }
 

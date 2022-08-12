@@ -6,10 +6,12 @@ export const FeedModalCss = styled.section`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   display: flex;
-  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
   padding: 2rem calc(4rem + 15px) 2rem 4rem;
 
   @media (max-width: 40rem) {
@@ -34,7 +36,6 @@ export const FeedPhotoItemCss = styled.li`
   overflow: hidden;
   cursor: pointer;
   border-radius: 0.2rem;
-
   div {
     grid-area: 1/1;
   }
@@ -46,8 +47,7 @@ export const FeedPhotoItemCss = styled.li`
     align-items: center;
     justify-content: center;
     display: none;
-    grid-area: 1/1;
-
+    grid-area: 1 / 1;
     &::before {
       content: "";
       width: 16px;

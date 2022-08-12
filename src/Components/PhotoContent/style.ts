@@ -18,6 +18,19 @@ export const PhotoContentCss = styled.div`
   opacity: 0;
   animation: ${ScaleUp} 0.3s forwards;
   transform: scale(0.8);
+
+  &.PhotoContentSingle {
+    grid-template-columns: 1fr;
+    height: auto;
+    ul {
+      padding: 0px;
+    }
+    form {
+      gap: 0;
+      margin: 1rem .3rem;
+    }
+  }
+
   @media (max-width: 64rem) {
     max-height: calc(100vh - 4rem);
     height: auto;
@@ -27,13 +40,23 @@ export const PhotoContentCss = styled.div`
 `;
 
 export const PhotoContentPhotoCss = styled.div`
-  grid-row: 1 /4;
+  grid-row: 1 / 4;
+
+  &.PhotoContentSingle {
+    grid-row: 1;
+    overflow: hidden;
+    border-radius: 0.2rem;
+  }
   @media (max-width: 64rem) {
     grid-row: 1;
   }
 `;
 export const PhotoContentDetailsCss = styled.div`
   padding: 2rem 2rem 0 2rem;
+
+  &.PhotoContentSingle {
+    padding: 1rem 0;
+  }
   div {
     .autor {
       opacity: 0.5;
@@ -108,7 +131,7 @@ export const FormPhoto = styled.form`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: stretch;
-  margin: 1rem ;
+  margin: 1rem;
   gap: 1rem;
 
   button {
@@ -157,7 +180,6 @@ export const Textearea = styled.textarea`
     box-shadow: 0 0 0 3px #fea;
   }
 `;
-
 
 export const ButtonDelete = styled.button`
   background: #ddd;
