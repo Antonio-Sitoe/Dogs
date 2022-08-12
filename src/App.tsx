@@ -8,25 +8,29 @@ import Login from "./pages/Login/Login";
 import ProtectedRoute from "./Helpers/ProtectedRoute";
 import Photo from "./pages/Photo/Photo";
 import UserProfile from "./pages/Profile/UserProfile";
+import NotFound404 from "./pages/404";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <UserStorage>
-        <>
+    <div className="App">
+      <BrowserRouter>
+        <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route path="/conta/*" element={<ProtectedRoute />} />
-            <Route path="/foto/:id" element={<Photo />} />
-            <Route path="/perfil/:user" element={<UserProfile />} />
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login/*" element={<Login />} />
+              <Route path="/conta/*" element={<ProtectedRoute />} />
+              <Route path="/foto/:id" element={<Photo />} />
+              <Route path="/perfil/:user" element={<UserProfile />} />
+              <Route path="*" element={<NotFound404 />} />
+            </Routes>
+          </main>
           <Footer />
           <GlobalStyle />
-        </>
-      </UserStorage>
-    </BrowserRouter>
+        </UserStorage>
+      </BrowserRouter>
+    </div>
   );
 };
 

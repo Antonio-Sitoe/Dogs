@@ -12,7 +12,7 @@ interface IUserContext {
   userLogout: () => void;
 }
 interface IUserStorage {
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
 export const UserContext = React.createContext({} as IUserContext);

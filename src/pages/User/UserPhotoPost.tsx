@@ -2,6 +2,7 @@ import React, { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Components/Form/Button/Button";
 import Input from "../../Components/Form/Input/Input";
+import Head from "../../Components/Head/Head";
 import Error from "../../Helpers/Error/Error";
 import useFetch from "../../Hooks/useFetch";
 import useForm from "../../Hooks/useForm";
@@ -33,9 +34,7 @@ function UserPhotoPost() {
     const token: string | null = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
 
-    const { response, json } = await request(url, options);
-
-    console.log(response, json);
+    await request(url, options);
   }
 
   function handleImgChange({ target }: any) {
@@ -47,6 +46,7 @@ function UserPhotoPost() {
   return (
     <AnimeLeft>
       <UserPhotoPostCss>
+        <Head title={"Postar foto "} description="Minha conta" />
         <form onSubmit={handleSubmitDogPhoto}>
           <Input label="Nome" type="text" name="nome" {...nome} />
           <Input label="Peso" type="number" name="Peso" {...peso} />

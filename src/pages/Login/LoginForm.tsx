@@ -6,7 +6,8 @@ import Error from "../../Helpers/Error/Error";
 import useForm from "../../Hooks/useForm";
 import { Link } from "react-router-dom";
 import { AnimeLeft, Title } from "../../styles/GlobalStyle";
-import { LinkLosthref, LoginForms, Register } from './style';
+import { LinkLosthref, LoginForms, Register } from "./style";
+import Head from "../../Components/Head/Head";
 
 function LoginForm() {
   const { userLogin, error, loading } = React.useContext(UserContext);
@@ -21,6 +22,7 @@ function LoginForm() {
   }
   return (
     <AnimeLeft>
+      <Head title={"Login"} description="Login conta" />
       <Title>Login</Title>
       <LoginForms onSubmit={handleSubmit}>
         <Input {...username} label="Usuario" type="text" name={"username"} />

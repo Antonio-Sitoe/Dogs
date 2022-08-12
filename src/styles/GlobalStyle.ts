@@ -8,6 +8,18 @@ export const animeLeft = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content:space-between;
+}
+
+.AppBody {
+  flex: 1;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -63,6 +75,8 @@ a {
 .mainContainer {
   margin-top: 2rem;
 }
+
+
 
 `;
 

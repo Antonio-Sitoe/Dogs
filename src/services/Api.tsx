@@ -1,4 +1,4 @@
-export const API_URL = "https://dogsapi.origamid.dev/json";
+export const API_URL = process.env.REACT_APP_BASE_URL;
 
 interface ITOKEN_POST {
   username: string;
@@ -94,7 +94,7 @@ export function PHOTO_DELETE(id: number) {
 interface IPHOTOS_GET {
   page: number;
   total: number;
-  user: number | string;
+  user?: number | string;
 }
 export function PHOTOS_GET({ page, total, user }: IPHOTOS_GET) {
   return {
@@ -119,6 +119,37 @@ export function PHOTO_GET_ID(id: number) {
     options: {
       method: "GET",
       cache: "no-store",
+    },
+  };
+}
+
+interface IRECOVERY_PASSWORD {
+  login: string;
+  url?: string;
+  key?: string;
+  password?: string;
+}
+export function RECOVERY_PASSWORD(body: IRECOVERY_PASSWORD) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+export function RECOVERY_RESET(body: IRECOVERY_PASSWORD) {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
     },
   };
 }

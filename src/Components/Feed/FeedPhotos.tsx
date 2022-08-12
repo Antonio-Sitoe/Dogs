@@ -12,7 +12,7 @@ import { FeedPhotoCss } from "./FeedStyle";
 interface IFeedPhotos {
   setModalPhoto: SetModalPhoto;
   setInFinite: Dispatch<SetStateAction<boolean>>;
-  user: number | string;
+  user?: number | string;
   page: number;
 }
 function FeedPhotos({ setModalPhoto, setInFinite, user, page }: IFeedPhotos) {

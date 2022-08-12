@@ -1,13 +1,20 @@
 import React from "react";
+import styled from "styled-components";
 import { IPhotoGet } from "../../Types/interfaces";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 
+const Feedback = styled.p`
+  text-align: center;
+  padding: 4rem 0;
+  color: #888888;
+`;
+
 interface IFeed {
-  user: number | string;
+  user?: number | string;
 }
 
-function Feed({ user }: IFeed) {
+function Feed({ user = 0 }: IFeed) {
   const [modalPhoto, setModalPhoto] = React.useState<null | IPhotoGet>(null);
   const [pages, setPages] = React.useState<Array<number>>([1]);
   const [infinite, setInFinite] = React.useState(true);
@@ -18,12 +25,10 @@ function Feed({ user }: IFeed) {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
-
         if (scroll > height * 0.75 && !wait) {
           setPages((pages) => {
             return [...pages, pages.length + 1];
           });
-          console.log(true);
           wait = true;
           setTimeout(() => {
             wait = false;
@@ -58,6 +63,7 @@ function Feed({ user }: IFeed) {
           />
         );
       })}
+      <Feedback>Nao ha mais postagens</Feedback>
     </>
   );
 }

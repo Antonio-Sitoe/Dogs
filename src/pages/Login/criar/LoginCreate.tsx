@@ -8,6 +8,7 @@ import useFetch from "../../../Hooks/useFetch";
 import { AnimeLeft, Title } from "../../../styles/GlobalStyle";
 import { LoginForms } from "../style";
 import { USER_POST } from "../../../services/Api";
+import Head from "../../../Components/Head/Head";
 
 function LoginCreate() {
   const { userLogin } = React.useContext(UserContext);
@@ -35,6 +36,7 @@ function LoginCreate() {
   }
   return (
     <AnimeLeft>
+      <Head title={"Criar a conta "} description="Login conta" />
       <Title>Cadastre-se</Title>
       <LoginForms onSubmit={CreateUser}>
         <Input {...username} label="Usuario" type="text" name="username" />

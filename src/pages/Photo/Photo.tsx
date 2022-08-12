@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Head from "../../Components/Head/Head";
 import PhotoContent from "../../Components/PhotoContent/PhotoContent";
 import Error from "../../Helpers/Error/Error";
 import Loading from "../../Helpers/Loading/Loading";
@@ -25,6 +26,7 @@ function Photo() {
   if (data)
     return (
       <section className="container mainContainer">
+        <Head title={data.photo.title + " "} description="Pagina da foto" />
         <PhotoContent photoData={data} single={true} />
       </section>
     );
