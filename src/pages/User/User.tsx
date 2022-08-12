@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Feed from "../../Components/Feed/Feed";
 import { AnimeLeft } from "../../styles/GlobalStyle";
