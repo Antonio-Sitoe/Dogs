@@ -53,19 +53,20 @@ export function USER_POST({ username, email, password }: ITOKEN_POST) {
     },
   };
 }
-export function PHOTO_POST(formData: FormData, token: string | null) {
+
+export function PHOTO_POST(formData: FormData) {
   return {
-    url: `${API_URL}/api/photo`,
+    url: API_URL + "/api/photo",
     options: {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
       body: formData,
     },
   };
 }
+
 export function COMMENT_POST(id: number, { comment }: { comment: string }) {
   return {
     url: `${API_URL}/api/comment/${id}`,
