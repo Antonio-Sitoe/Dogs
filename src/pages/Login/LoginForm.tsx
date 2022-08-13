@@ -32,7 +32,7 @@ function LoginForm() {
         ) : (
           <Button text="Carregando..." disabled={true} />
         )}
-        {error && <Error error={error} />}
+        {error && <Error error={"Dados incorrectos"} />}
       </LoginForms>
       <LinkLosthref to="/login/perdeu">Perdeu a Senha ?</LinkLosthref>
       <Register>

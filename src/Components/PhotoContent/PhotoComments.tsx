@@ -17,7 +17,7 @@ function PhotoComments({ id, comments }: IPhotoComments) {
   React.useEffect(() => {
     commentsSection.current?.scrollTo({
       behavior: "smooth",
-      top: commentsSection.current.scrollHeight,
+      top: commentsSection.current.scrollHeight
     });
   }, [comments]);
 

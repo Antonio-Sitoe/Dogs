@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import Button from "../../../Components/Form/Button/Button";
 import Input from "../../../Components/Form/Input/Input";
-import Head from '../../../Components/Head/Head';
+import Head from "../../../Components/Head/Head";
 import Error from "../../../Helpers/Error/Error";
 import useFetch from "../../../Hooks/useFetch";
 import useForm from "../../../Hooks/useForm";
@@ -24,7 +24,7 @@ function LoginPasswordLost() {
     }
   }
   return (
-    <div>
+    <section className="animeleft">
       <Head title={"Perdeu a senha "} description="Login conta" />
       <Title>Perdeu a Senha ?</Title>
       {data ? (
@@ -40,7 +40,7 @@ function LoginPasswordLost() {
           {error && <Error error={error} />}
         </form>
       )}
-    </div>
+    </section>
   );
 }
 

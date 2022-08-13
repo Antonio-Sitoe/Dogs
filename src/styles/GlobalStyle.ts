@@ -75,6 +75,11 @@ a {
 .mainContainer {
   margin-top: 2rem;
 }
+.animeleft {
+   opacity: 0;
+  transform: translateX(-20px);
+  animation: ${animeLeft} 0.3s forwards; 
+}
 
 
 

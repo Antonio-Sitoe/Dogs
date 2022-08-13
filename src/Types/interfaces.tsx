@@ -41,3 +41,9 @@ export interface IPhotoGetId {
   photo: IPhotoGet;
   comments: Array<Comments>;
 }
+
+export interface IUserStatisData {
+  acessos: string;
+  id: number;
+  title: string;
+}

@@ -153,3 +153,14 @@ export function RECOVERY_RESET(body: IRECOVERY_PASSWORD) {
     },
   };
 }
+export function STATS_GET() {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    },
+  };
+}

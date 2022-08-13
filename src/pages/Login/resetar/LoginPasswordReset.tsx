@@ -7,7 +7,7 @@ import Button from "../../../Components/Form/Button/Button";
 import Error from "../../../Helpers/Error/Error";
 import { RECOVERY_RESET } from "../../../services/Api";
 import { useNavigate } from "react-router-dom";
-import Head from '../../../Components/Head/Head';
+import Head from "../../../Components/Head/Head";
 
 function LoginPasswordReset() {
   const password = useForm();
@@ -39,8 +39,8 @@ function LoginPasswordReset() {
   }, []);
 
   return (
-    <div>
-          <Head title={"Resetar a senha "} description="Login conta" />
+    <section className="animeleft">
+      <Head title={"Resetar a senha "} description="Login conta" />
       <Title>Resetar a Senha</Title>
       <form onSubmit={handlSubmit}>
         <Input
@@ -56,7 +56,7 @@ function LoginPasswordReset() {
         )}
         {error && <Error error={error} />}
       </form>
-    </div>
+    </section>
   );
 }
 

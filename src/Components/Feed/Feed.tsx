@@ -6,8 +6,8 @@ import FeedPhotos from "./FeedPhotos";
 
 const Feedback = styled.p`
   text-align: center;
-  padding: 4rem 0;
-  color: #888888;
+  padding: 2rem 0 4rem 0;
+  color: #888;
 `;
 
 interface IFeed {
@@ -63,7 +63,7 @@ function Feed({ user = 0 }: IFeed) {
           />
         );
       })}
-      <Feedback>Nao ha mais postagens</Feedback>
+      {!infinite && !user && <Feedback>Não existem mais postagens.</Feedback>}
     </>
   );
 }
