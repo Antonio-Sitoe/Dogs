@@ -15,7 +15,7 @@ function Footer() {
   return (
     <FooterCss>
       <img src={Dogs} alt="" />
-      <p>Dogs. Alguns direitos reservados</p>
+      <p>UVic Student Onboarding</p>
     </FooterCss>
   );
 }
