@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Dogs />
-      <p>Uvic Student Onboarding</p>
+      <p>UVic Student Onboarding</p>
     </footer>
   );
 };
