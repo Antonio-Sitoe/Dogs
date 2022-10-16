@@ -50,7 +50,7 @@ function LoginPasswordReset() {
           {...password}
         />
         {loading ? (
-          <Button text="Enviando" disabled={true} />
+          <Button text="Sending" disabled={true} />
         ) : (
           <Button text="Resetar" />
         )}
