@@ -28,8 +28,8 @@ const LoginForm = () => {
       <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input label="Username" type="text" name="username" {...username} />
+        <Input label="Password" type="password" name="password" {...password} />
         {loading ? (
           <Button disabled>Loading...</Button>
         ) : (
@@ -42,7 +42,7 @@ const LoginForm = () => {
       </Link>
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Register</h2>
-        <p>Don't have an account yet? Register here.</p>
+        <p>Don't have an account yet? Register here</p>
         <Link className={stylesBtn.button} to="/login/criar">
           Registration
         </Link>
