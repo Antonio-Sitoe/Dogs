@@ -40,11 +40,11 @@ function LoginPasswordReset() {
 
   return (
     <section className="animeleft">
-      <Head title={"Resetar a senha "} description="Login conta" />
-      <Title>Resetar a Senha</Title>
+      <Head title={"Reset password"} description="Login conta" />
+      <Title>Reset password</Title>
       <form onSubmit={handlSubmit}>
         <Input
-          label="Nova Senha"
+          label="New passworda"
           type="password"
           name="password"
           {...password}
@@ -52,7 +52,7 @@ function LoginPasswordReset() {
         {loading ? (
           <Button text="Sending" disabled={true} />
         ) : (
-          <Button text="Resetar" />
+          <Button text="Reset" />
         )}
         {error && <Error error={error} />}
       </form>
