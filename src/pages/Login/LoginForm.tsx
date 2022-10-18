@@ -25,19 +25,19 @@ function LoginForm() {
       <Head title={"Login"} description="Login conta" />
       <Title>Login</Title>
       <LoginForms onSubmit={handleSubmit}>
-        <Input {...username} label="Usuario" type="text" name={"username"} />
-        <Input {...password} label="Senha" type="password" name={"password"} />
+        <Input {...username} label="Username" type="text" name={"username"} />
+        <Input {...password} label="Password" type="password" name={"password"} />
         {!loading ? (
-          <Button text="Entrar" />
+          <Button text="Enter" />
         ) : (
-          <Button text="Carregando..." disabled={true} />
+          <Button text="Loading..." disabled={true} />
         )}
         {error && <Error error={"Incorrect data"} />}
       </LoginForms>
-      <LinkLosthref to="/login/perdeu">Perdeu a Senha ?</LinkLosthref>
+      <LinkLosthref to="/login/perdeu">Forgot Password?</LinkLosthref>
       <Register>
         <h2>Register</h2>
-        <p>Don't have an account? Register here</p>
+        <p>Don't have an account? Register here.</p>
         <Link to="/login/criar">Register</Link>
       </Register>
     </AnimeLeft>

@@ -25,22 +25,17 @@ function LoginPasswordLost() {
   }
   return (
     <section className="animeleft">
-<<<<<<< Updated upstream
-      <Head title={"Perdeu a senha "} description="Login conta" />
-      <Title>Perdeu a Senha ?</Title>
-=======
-      <Head title={"Lost password"} description="Login conta" />
+      <Head title={"Forgot password"} description="Account login" />
       <Title>Forgot Password?</Title>
->>>>>>> Stashed changes
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (
         <form onSubmit={handleRecoverPassword}>
-          <Input label="Email / Usuario" type="text" name="email" {...login} />
+          <Input label="Email / Username" type="text" name="email" {...login} />
           {loading ? (
-            <Button text="Enviando" disabled={true} />
+            <Button text="Sending" disabled={true} />
           ) : (
-            <Button text="Enviar email" />
+            <Button text="Send email" />
           )}
           {error && <Error error={error} />}
         </form>

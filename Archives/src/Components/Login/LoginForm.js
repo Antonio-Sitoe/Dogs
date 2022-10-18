@@ -31,9 +31,9 @@ const LoginForm = () => {
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
         {loading ? (
-          <Button disabled>Carregando...</Button>
+          <Button disabled>Loading...</Button>
         ) : (
-          <Button>Entrar</Button>
+          <Button>Enter</Button>
         )}
         <Error error={error && 'Dados incorretos.'} />
       </form>
@@ -41,10 +41,10 @@ const LoginForm = () => {
         Lost Password?
       </Link>
       <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda não possui conta? Cadastre-se no site.</p>
+        <h2 className={styles.subtitle}>Register</h2>
+        <p>Don't have an account yet? Register here.</p>
         <Link className={stylesBtn.button} to="/login/criar">
-          Cadastro
+          Registration
         </Link>
       </div>
     </section>

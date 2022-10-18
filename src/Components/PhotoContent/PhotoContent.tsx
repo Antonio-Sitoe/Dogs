@@ -6,11 +6,13 @@ import { IPhotoGetId } from "../../Types/interfaces";
 import Image from "../Image/Image";
 import PhotoComments from "./PhotoComments";
 import {
+  PhotoCommentsCss,
   PhotoContentCss,
   PhotoContentDetailsCss,
   PhotoContentPhotoCss,
 } from "./style";
 import PhotoDelete from "./PhotoDelete";
+import Photo from "../../pages/Photo/Photo";
 
 interface IPhotoContentProps {
   photoData: IPhotoGetId;
@@ -41,11 +43,11 @@ function PhotoContent({ photoData, single }: IPhotoContentProps) {
 
           <ul className="attributes">
             <li>{photo.peso} kg</li>
-            <li>{photo.idade} anos</li>
+            <li>{photo.idade} years old</li>
           </ul>
         </div>
       </PhotoContentDetailsCss>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoCommentsCss>School have you stressed out? {photo.title} is here to help relieve your suffering... somewhat. Come on down to the UVSS to play with {photo.title}! <br></br> <br></br> Photo credits courtesy of @{photo.author}!</PhotoCommentsCss>
     </PhotoContentCss>
   );
 }
