@@ -25,8 +25,13 @@ function LoginPasswordLost() {
   }
   return (
     <section className="animeleft">
+<<<<<<< Updated upstream
       <Head title={"Perdeu a senha "} description="Login conta" />
       <Title>Perdeu a Senha ?</Title>
+=======
+      <Head title={"Lost password"} description="Login conta" />
+      <Title>Forgot Password?</Title>
+>>>>>>> Stashed changes
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (

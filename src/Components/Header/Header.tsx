@@ -14,7 +14,7 @@ function Header() {
         {data ? (
           <LoginLink to="/conta">{data?.nome}</LoginLink>
         ) : (
-          <LoginLink to="/login"> Login | Criar</LoginLink>
+          <LoginLink to="/login"></LoginLink>
         )}
       </nav>
     </HeaderCss>

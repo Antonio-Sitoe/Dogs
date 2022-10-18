@@ -32,13 +32,13 @@ function LoginForm() {
         ) : (
           <Button text="Carregando..." disabled={true} />
         )}
-        {error && <Error error={"Dados incorrectos"} />}
+        {error && <Error error={"Incorrect data"} />}
       </LoginForms>
       <LinkLosthref to="/login/perdeu">Perdeu a Senha ?</LinkLosthref>
       <Register>
-        <h2>Cadastre-se</h2>
-        <p>Ainda na possu conta? Cadastre-se no site</p>
-        <Link to="/login/criar">Cadastrar</Link>
+        <h2>Register</h2>
+        <p>Don't have an account? Register here</p>
+        <Link to="/login/criar">Register</Link>
       </Register>
     </AnimeLeft>
   );

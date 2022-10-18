@@ -63,7 +63,7 @@ function Feed({ user = 0 }: IFeed) {
           />
         );
       })}
-      {!infinite && !user && <Feedback>Não existem mais postagens.</Feedback>}
+      {!infinite && !user && <Feedback>There are no more posts.</Feedback>}
     </>
   );
 }
