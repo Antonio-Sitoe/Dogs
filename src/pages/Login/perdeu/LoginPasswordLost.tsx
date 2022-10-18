@@ -25,17 +25,17 @@ function LoginPasswordLost() {
   }
   return (
     <section className="animeleft">
-      <Head title={"Perdeu a senha "} description="Login conta" />
+      <Head title={"Lost password"} description="Login conta" />
       <Title>Forgot Password?</Title>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (
         <form onSubmit={handleRecoverPassword}>
-          <Input label="Email / Username" type="text" name="email" {...login} />
+          <Input label="Email / Usuario" type="text" name="email" {...login} />
           {loading ? (
-            <Button text="Sending" disabled={true} />
+            <Button text="Enviando" disabled={true} />
           ) : (
-            <Button text="Send email" />
+            <Button text="Enviar email" />
           )}
           {error && <Error error={error} />}
         </form>

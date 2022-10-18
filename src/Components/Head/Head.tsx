@@ -7,7 +7,7 @@ interface Props {
 
 const Head = (props: Props) => {
   useEffect(() => {
-    document.title = props.title + "| Dogs";
+    document.title = props.title;
     document
       .querySelector("meta[description]")
       ?.setAttribute("content", props.description || "");
