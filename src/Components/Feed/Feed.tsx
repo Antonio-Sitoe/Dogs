@@ -25,14 +25,14 @@ function Feed({ user = 0 }: IFeed) {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
-        if (scroll > height * 0.75 && !wait) {
+        if (scroll > height * 0.01 && !wait) {
           setPages((pages) => {
             return [...pages, pages.length + 1];
           });
           wait = true;
           setTimeout(() => {
             wait = false;
-          }, 500);
+          }, 50);
         }
       }
     }

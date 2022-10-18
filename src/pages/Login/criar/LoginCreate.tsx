@@ -36,13 +36,8 @@ function LoginCreate() {
   }
   return (
     <AnimeLeft>
-<<<<<<< Updated upstream
       <Head title={"Criar a conta "} description="Login conta" />
       <Title>Cadastre-se</Title>
-=======
-      <Head title={"Create an account"} description="Login conta" />
-      <Title>Register</Title>
->>>>>>> Stashed changes
       <LoginForms onSubmit={CreateUser}>
         <Input {...username} label="Usuario" type="text" name="username" />
         <Input {...email} label="Email" type="email" name="email" />
