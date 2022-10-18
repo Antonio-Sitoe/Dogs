@@ -32,7 +32,7 @@ function LoginForm() {
         ) : (
           <Button text="Loading..." disabled={true} />
         )}
-        {error && <Error error={"Dados incorrectos"} />}
+        {error && <Error error={"Password Incorrect"} />}
       </LoginForms>
       <LinkLosthref to="/login/perdeu">Forgot Password?</LinkLosthref>
       <Register>
