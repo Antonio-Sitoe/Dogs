@@ -48,7 +48,7 @@ export function UserStorage({ children }: IUserStorage) {
       setLoading(true);
       const { url, options } = TOKEN_POST({ username, password });
       const tokenResponse = await fetch(url, options);
-      if (!tokenResponse.ok) throw new Error(`Usuario invalido.`);
+      if (!tokenResponse.ok) throw new Error(`Invalid Username`);
       const { token } = await tokenResponse.json();
       window.localStorage.setItem(tokenName, token);
       await getUser(token);

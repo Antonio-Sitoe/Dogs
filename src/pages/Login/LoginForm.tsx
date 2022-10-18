@@ -25,7 +25,7 @@ function LoginForm() {
       <Head title={"Login"} description="Login conta" />
       <Title>Login</Title>
       <LoginForms onSubmit={handleSubmit}>
-        <Input {...username} label="User Name" type="text" name={"username"} />
+        <Input {...username} label="Username" type="text" name={"username"} />
         <Input {...password} label="Password" type="password" name={"password"} />
         {!loading ? (
           <Button text="Enter" />
@@ -34,10 +34,10 @@ function LoginForm() {
         )}
         {error && <Error error={"Password Incorrect"} />}
       </LoginForms>
-      <LinkLosthref to="/login/perdeu">Forgot your password ?</LinkLosthref>
+      <LinkLosthref to="/login/perdeu">Forgot Password?</LinkLosthref>
       <Register>
         <h2>Register</h2>
-        <p>Still don't have an account? Register on the website</p>
+        <p>Don't have an account? Register here</p>
         <Link to="/login/criar">Register</Link>
       </Register>
     </AnimeLeft>
