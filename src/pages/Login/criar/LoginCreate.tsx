@@ -36,12 +36,12 @@ function LoginCreate() {
   }
   return (
     <AnimeLeft>
-      <Head title={"Criar a conta "} description="Login conta" />
+      <Head title={"Register "} description="Login new account" />
       <Title>Register</Title>
       <LoginForms onSubmit={CreateUser}>
-        <Input {...username} label="Username" type="text" name="username" />
-        <Input {...email} label="Email" type="email" name="email" />
-        <Input {...password} label="Senha" type="password" name="password" />
+        <Input {...username} label="Username" type="text" name="username" erro="Invalid input"/>
+        <Input {...email} label="Email" type="email" name="email" erro="Invalid input"/>
+        <Input {...password} label="Password" type="password" name="password" erro="Invalid input" />
         {!loading ? (
           <Button text="Register" />
         ) : (
