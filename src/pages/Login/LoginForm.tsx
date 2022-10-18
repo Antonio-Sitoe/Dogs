@@ -37,7 +37,7 @@ function LoginForm() {
       <LinkLosthref to="/login/perdeu">Forgot Password?</LinkLosthref>
       <Register>
         <h2>Register</h2>
-        <p>Don't have an account? Register here</p>
+        <p>Don't have an account? Register here.</p>
         <Link to="/login/criar">Register</Link>
       </Register>
     </AnimeLeft>
