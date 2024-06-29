@@ -1,5 +1,5 @@
-import { IPhotoGet } from "../../Types/interfaces";
-import { SetModalPhoto } from "../../Types/Type";
+import { IPhotoGet } from "../../@types/interfaces";
+import { SetModalPhoto } from "../../@types/Type";
 import Image from "../Image/Image";
 import { FeedPhotoItemCss } from "./FeedStyle";
 

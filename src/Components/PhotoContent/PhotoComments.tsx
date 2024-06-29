@@ -1,5 +1,5 @@
 import React from "react";
-import { Comments } from "../../Types/interfaces";
+import { Comments } from "../../@types/interfaces";
 import { PhotoCommentsCss } from "./style";
 import UserContext from "../../Contexts/UserContext";
 import PhotoCommentsForm from "./PhotoCommentsForm";
@@ -17,7 +17,7 @@ function PhotoComments({ id, comments }: IPhotoComments) {
   React.useEffect(() => {
     commentsSection.current?.scrollTo({
       behavior: "smooth",
-      top: commentsSection.current.scrollHeight
+      top: commentsSection.current.scrollHeight,
     });
   }, [comments]);
 

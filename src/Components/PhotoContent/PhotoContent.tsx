@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../Contexts/UserContext";
 import { Title } from "../../styles/GlobalStyle";
-import { IPhotoGetId } from "../../Types/interfaces";
+import { IPhotoGetId } from "../../@types/interfaces";
 import Image from "../Image/Image";
 import PhotoComments from "./PhotoComments";
 import {
@@ -21,10 +21,14 @@ function PhotoContent({ photoData, single }: IPhotoContentProps) {
   const user = React.useContext(UserContext);
   return (
     <PhotoContentCss className={single === true ? "PhotoContentSingle" : ""}>
-      <PhotoContentPhotoCss className={single === true ? "PhotoContentSingle" : ""}>
+      <PhotoContentPhotoCss
+        className={single === true ? "PhotoContentSingle" : ""}
+      >
         <Image src={photo.src} alt={photo.title} />
       </PhotoContentPhotoCss>
-      <PhotoContentDetailsCss className={single === true ? "PhotoContentSingle" : ""}>
+      <PhotoContentDetailsCss
+        className={single === true ? "PhotoContentSingle" : ""}
+      >
         <div>
           <p className="autor">
             {user.data && user.data.username === photo.author ? (

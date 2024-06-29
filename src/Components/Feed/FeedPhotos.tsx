@@ -4,8 +4,8 @@ import Loading from "../../Helpers/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTOS_GET } from "../../services/Api";
 import { AnimeLeft } from "../../styles/GlobalStyle";
-import { IPhotoGet } from "../../Types/interfaces";
-import { SetModalPhoto } from "../../Types/Type";
+import { IPhotoGet } from "../../@types/interfaces";
+import { SetModalPhoto } from "../../@types/Type";
 import FeedPhotosItem from "./FeedPhotosItem";
 import { FeedPhotoCss } from "./FeedStyle";
 

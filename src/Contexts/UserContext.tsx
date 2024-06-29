@@ -1,6 +1,6 @@
 import React from "react";
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from "../services/Api";
-import { IData } from "../Types/interfaces";
+import { IData } from "../@types/interfaces";
 import { useNavigate } from "react-router-dom";
 
 interface IUserContext {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IPhotoGet } from "../../Types/interfaces";
+import { IPhotoGet } from "../../@types/interfaces";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 

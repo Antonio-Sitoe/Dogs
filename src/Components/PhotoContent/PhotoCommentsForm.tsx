@@ -1,10 +1,10 @@
 import React, { Dispatch, FormEvent, SetStateAction } from "react";
-import { Comments } from "../../Types/interfaces";
+import { Comments } from "../../@types/interfaces";
 import useFetch from "../../Hooks/useFetch";
 import { COMMENT_POST } from "../../services/Api";
 import Error from "../../Helpers/Error/Error";
 import { FormPhoto, Textearea } from "./style";
-import SendSvg from "../../assets/SendSvg";
+import SendSvg from "../../../public/assets/SendSvg";
 
 interface IPhotoComments {
   id: number;

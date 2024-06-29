@@ -3,12 +3,12 @@ import { UserStorage } from "./Contexts/UserContext";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
+import Home from "./app/Home/Home";
+import Login from "./app/Login/Login";
 import ProtectedRoute from "./Helpers/ProtectedRoute";
-import Photo from "./pages/Photo/Photo";
-import UserProfile from "./pages/Profile/UserProfile";
-import NotFound404 from "./pages/404";
+import Photo from "./app/Photo/Photo";
+import UserProfile from "./app/Profile/UserProfile";
+import NotFound404 from "./app/404";
 
 const App = () => {
   return (

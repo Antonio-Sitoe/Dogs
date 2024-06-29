@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../../Contexts/UserContext";
-import User from "../../pages/User/User";
+import User from "../../app/User/User";
 
 function ProtectedRoute() {
   const { login } = React.useContext(UserContext);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Dogs } from "../../assets/Dogs";
+import { Dogs } from "../../../public/assets/Dogs";
 import { HeaderCss, LoginLink, Logo } from "./style";
 import { UserContext } from "../../Contexts/UserContext";
 

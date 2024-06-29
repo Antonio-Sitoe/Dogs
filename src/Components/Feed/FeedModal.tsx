@@ -3,8 +3,8 @@ import Error from "../../Helpers/Error/Error";
 import Loading from "../../Helpers/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTO_GET_ID } from "../../services/Api";
-import { IPhotoGet, IPhotoGetId } from "../../Types/interfaces";
-import { SetModalPhoto } from "../../Types/Type";
+import { IPhotoGet, IPhotoGetId } from "../../@types/interfaces";
+import { SetModalPhoto } from "../../@types/Type";
 import PhotoContent from "../PhotoContent/PhotoContent";
 import { FeedModalCss } from "./FeedStyle";
 

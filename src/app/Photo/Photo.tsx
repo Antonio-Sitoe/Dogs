@@ -6,7 +6,7 @@ import Error from "../../Helpers/Error/Error";
 import Loading from "../../Helpers/Loading/Loading";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTO_GET } from "../../services/Api";
-import { IPhotoGetId } from "../../Types/interfaces";
+import { IPhotoGetId } from "../../@types/interfaces";
 
 function Photo() {
   const { id } = useParams();
