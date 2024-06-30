@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
-type User = {
+export type User = {
   id: number;
   nome: string;
   username: string;
@@ -19,7 +19,7 @@ const UserContext = React.createContext<IUserContext | null>(null);
 export const useUser = () => {
   const context = React.useContext(UserContext);
   if (context === null) {
-    throw new Error('useContext deve estar dentro do Provider');
+    throw new Error("useContext deve estar dentro do Provider");
   }
   return context;
 };
