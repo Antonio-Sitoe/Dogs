@@ -1,4 +1,5 @@
 import { prisma } from "@/functions/prisma";
+import { signJWT } from "@/functions/token";
 import { userPostSchema } from "@/schemas/user";
 import bcrypt from "bcrypt";
 import { NextRequest, NextResponse } from "next/server";
@@ -32,12 +33,18 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    const token = await signJWT({
+      id: newUser.id,
+      username: newUser.name,
+    });
+
     return NextResponse.json({
       user: {
         id: newUser.id,
         username: newUser.name,
         email: newUser.email,
       },
+      token,
       status: 200,
     });
   } catch (error) {
