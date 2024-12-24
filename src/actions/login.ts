@@ -1,8 +1,8 @@
 "use server";
 
-import { TOKEN_POST } from "@/functions/api";
 import apiError from "@/functions/api-error";
 import { cookies } from "next/headers";
+import { api } from '../functions/api';
 
 export default async function login(state: {}, formData: FormData) {
   const username = formData.get("username") as string | null;
@@ -10,16 +10,10 @@ export default async function login(state: {}, formData: FormData) {
 
   try {
     if (!username || !password) throw new Error("Preencha os dados.");
-    const { url } = TOKEN_POST();
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        email: username,
-        password,
-      }),
-    });
-    const data = await response.json();
-    if (!response.ok) throw new Error(data?.message);
+    const { data } = await api.post('/sign-in', {
+      email: username,
+      password,
+    })
     console.log(data);
     cookies().set("token", data.token, {
       httpOnly: true,
@@ -29,6 +23,7 @@ export default async function login(state: {}, formData: FormData) {
     });
     return { data: null, ok: true, error: "" };
   } catch (error: unknown) {
+    console.log(error);
     return apiError(error);
   }
 }

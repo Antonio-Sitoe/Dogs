@@ -1,9 +1,8 @@
 "use server";
 
-import { USER_POST } from "@/functions/api";
-import apiError from "@/functions/api-error";
-import login from "./login";
+import { api } from "@/functions/api";
 import { cookies } from "next/headers";
+import apiError from "@/functions/api-error";
 
 export default async function userPost(state: {}, formData: FormData) {
   const username = formData.get("username") as string | null;
@@ -13,17 +12,11 @@ export default async function userPost(state: {}, formData: FormData) {
     if (!username || !email || !password) throw new Error("Preencha os dados.");
     if (password.length < 6)
       throw new Error("A senha deve ter mais de 6 dígitos.");
-    const { url } = USER_POST();
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-      }),
-    });
-    if (!response.ok) throw new Error("Email ou usuário já cadastrado.");
-    const data = await response.json();
+    const { data } = await api.post("/users", {
+      "username": username,
+      "email": email,
+      "password": password
+    })
     cookies().set("token", data.token, {
       httpOnly: true,
       secure: true,

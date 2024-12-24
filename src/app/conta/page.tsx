@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 
 export default async function ContaPage() {
   const { data: user } = await userGet();
-  const { data } = await photosGet({ user: user?.username });
+  const { data } = await photosGet({ user: user?.id });
+  console.log({ data });
+
   return (
     <section>
       {data?.length ? (

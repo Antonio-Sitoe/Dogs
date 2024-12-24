@@ -1,11 +1,26 @@
-// @ts-nocheck
+import axios from 'axios'
+import { parseCookies } from 'nookies'
+
 export const API_URL = "https://dogsapi.origamid.dev/json";
-const api = process.env.API_URL;
-export function TOKEN_POST() {
-  return {
-    url: api + "/api/login",
-  };
-}
+
+const api = axios.create({
+  baseURL: "http://localhost:3333"
+});
+
+
+api.interceptors.request.use(async (config) => {
+  let token_request: string | undefined
+  if (typeof window === 'undefined') {
+    const { cookies: serverCookies } = await import('next/headers')
+    token_request = serverCookies().get('token')?.value
+  } else {
+    const { session } = parseCookies()
+    token_request = session
+  }
+  if (token_request) config.headers.Authorization = `Bearer ${token_request}`
+  return config
+})
+
 
 export function TOKEN_VALIDATE_POST() {
   return {
@@ -13,17 +28,6 @@ export function TOKEN_VALIDATE_POST() {
   };
 }
 
-export function USER_GET() {
-  return {
-    url: API_URL + "/api/user",
-  };
-}
-
-export function USER_POST() {
-  return {
-    url: api + "/api/users",
-  };
-}
 
 export function PHOTO_POST() {
   return {
@@ -31,19 +35,7 @@ export function PHOTO_POST() {
   };
 }
 
-export function PHOTOS_GET({
-  page,
-  total,
-  user,
-}: {
-  page: number;
-  total: number;
-  user: 0 | string;
-}) {
-  return {
-    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
-  };
-}
+
 
 export function PHOTO_GET(id: string) {
   return {
@@ -63,11 +55,7 @@ export function PHOTO_DELETE(id: string) {
   };
 }
 
-export function PASSWORD_FORGOT() {
-  return {
-    url: API_URL + "/api/password/lost",
-  };
-}
+
 
 export function PASSWORD_RESET() {
   return {
@@ -80,3 +68,6 @@ export function STATS_GET() {
     url: API_URL + "/api/stats",
   };
 }
+
+
+export { api }

@@ -1,10 +1,8 @@
-import LoginResetarForm from '@/components/login/login-resetar-form';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Resetar a senha | Dogs',
-  description: 'Resete a sua senha',
-};
+import LoginResetarForm from '@/components/login/login-resetar-form';
+import { useSearchParams } from 'next/navigation';
+
 
 type ResetarSearchParams = {
   searchParams: {
@@ -13,15 +11,15 @@ type ResetarSearchParams = {
   };
 };
 
-export default async function ResetarPage({
-  searchParams,
-}: ResetarSearchParams) {
+export default function ResetarPage() {
+  const key = useSearchParams().get('key') || ''
+  const login = useSearchParams().get('login') || ''
   return (
     <div className="animeLeft">
       <h1 className="title">Resete a Senha</h1>
       <LoginResetarForm
-        keyToken={searchParams.key}
-        login={searchParams.login}
+        keyToken={key}
+        login={login}
       />
     </div>
   );
