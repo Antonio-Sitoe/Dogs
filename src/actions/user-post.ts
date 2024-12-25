@@ -13,9 +13,9 @@ export default async function userPost(state: {}, formData: FormData) {
     if (password.length < 6)
       throw new Error("A senha deve ter mais de 6 dígitos.");
     const { data } = await api.post("/users", {
-      "username": username,
-      "email": email,
-      "password": password
+      username: username,
+      email: email,
+      password: password
     })
     cookies().set("token", data.token, {
       httpOnly: true,

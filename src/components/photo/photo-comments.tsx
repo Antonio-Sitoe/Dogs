@@ -8,7 +8,7 @@ import { Comment } from '@/actions/photo-get';
 
 const PhotoComments = (props: {
   single: boolean;
-  id: number;
+  id: string;
   comments: Comment[];
 }) => {
   const [comments, setComments] = React.useState(() => props.comments);

@@ -12,6 +12,7 @@
     "@prisma/client": "^5.16.1",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
     "jose": "^5.6.2",
     "next": "^14.2.4",
     "nookies": "^2.5.2",

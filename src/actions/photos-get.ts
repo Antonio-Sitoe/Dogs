@@ -2,17 +2,21 @@
 
 import { api } from '@/functions/api';
 import apiError from '@/functions/api-error';
+import { Comment } from './photo-get';
+
 
 export type Photo = {
-  id: number;
-  author: string;
+  id: string;
+  nome: string;
   title: string;
   date: string;
-  src: string;
+  imagem: string;
   peso: string;
   idade: string;
+  author: string;
   acessos: string;
   total_comments: string;
+  comments: Comment[]
 };
 
 
@@ -35,7 +39,7 @@ export default async function photosGet(
     const { data } = await api.get(`/photo?_page=${page}&_total=${total}${user ? `&_user=${user}` : ''}`)
     console.log({ data })
     return {
-      data: data?.data?.photos.map((item) => {
+      data: data?.data?.photos.map((item: { userId: any; nome: any; createdAt: any; imagem: any; }) => {
         return {
           ...item,
           author: item.userId,

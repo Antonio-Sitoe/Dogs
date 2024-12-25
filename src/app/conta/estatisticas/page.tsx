@@ -20,7 +20,7 @@ export default async function EstatisticasPage() {
   if (!data) return null;
   return (
     <section>
-      <ContaEstatisticas data={data} />
+      <ContaEstatisticas data={data.statics} total={data.total} />
     </section>
   );
 }

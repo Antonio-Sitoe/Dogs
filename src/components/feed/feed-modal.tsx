@@ -1,11 +1,11 @@
 'use client';
 
-import { PhotoData } from '@/actions/photo-get';
 import PhotoContent from '../photo/photo-content';
 import styles from './feed-modal.module.css';
 import { usePathname, useRouter } from 'next/navigation';
+import { Photo } from '@/actions/photos-get';
 
-export default function FeedModal({ photo }: { photo: PhotoData }) {
+export default function FeedModal({ photo }: { photo: Photo }) {
   const router = useRouter();
   const pathname = usePathname();
 

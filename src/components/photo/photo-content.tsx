@@ -7,43 +7,44 @@ import PhotoDelete from './photo-delete';
 import Link from 'next/link';
 import { useUser } from '@/context/user-context';
 import Image from 'next/image';
-import { PhotoData } from '@/actions/photo-get';
+import { Photo } from '@/actions/photos-get';
 
 const PhotoContent = ({
   data,
   single,
 }: {
-  data: PhotoData;
+  data: Photo;
   single: boolean;
 }) => {
   const { user } = useUser();
-  const { photo, comments } = data;
+  const { id, comments, imagem, nome, peso, idade, acessos, author } = data;
+
 
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
-        <Image src={photo.src} alt={photo.title} width={1000} height={1000} />
+        <Image src={imagem} alt={nome} width={1000} height={1000} />
       </div>
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            {user && user.username === photo.author ? (
-              <PhotoDelete id={String(photo.id)} />
+            {user && user.username === author ? (
+              <PhotoDelete id={String(id)} />
             ) : (
-              <Link href={`/perfil/${photo.author}`}>@{photo.author}</Link>
+              <Link href={`/perfil/${author}`}>@{author}</Link>
             )}
-            <span className={styles.visualizacoes}>{photo.acessos}</span>
+            <span className={styles.visualizacoes}>{acessos}</span>
           </p>
           <h1 className="title">
-            <Link href={`/foto/${photo.id}`}>{photo.title}</Link>
+            <Link href={`/foto/${id}`}>{nome}</Link>
           </h1>
           <ul className={styles.attributes}>
-            <li>{photo.peso} kg</li>
-            <li>{photo.idade} anos</li>
+            <li>{peso} kg</li>
+            <li>{idade} anos</li>
           </ul>
         </div>
       </div>
-      <PhotoComments single={single} id={photo.id} comments={comments} />
+      <PhotoComments single={single} id={id} comments={comments} />
     </div>
   );
 };

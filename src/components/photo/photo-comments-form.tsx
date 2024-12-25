@@ -23,7 +23,7 @@ export default function PhotoCommentsForm({
   setComments,
 }: {
   single: boolean;
-  id: number;
+  id: string;
   setComments: React.Dispatch<React.SetStateAction<Comment[]>>;
 }) {
   const [state, action] = useFormState(commentPost, {
